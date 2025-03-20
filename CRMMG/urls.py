@@ -6,7 +6,9 @@ from django.urls import path, include
 urlpatterns = [
     path("admin/", admin.site.urls),  # Admin panel
     path("ckeditor/", include("ckeditor_uploader.urls")),  # CKEditor file upload URLs
-    path('lesson/',include('lesson.urls'))
+    path('accounts/', include('allauth.urls')),
+    path("user/", include('user.urls')),
+    path('lesson/',include('lesson.urls')),
 ]
 
 # Serve media files in development
